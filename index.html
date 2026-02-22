@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralNexus 2026 — AI Conference</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+
+  <div class="wrapper">
+    <div class="badge">Registration Open</div>
+    <h1>Neural<span>Nexus</span><br>2026</h1>
+    <p class="subtitle">The world's leading AI conference. March 14–16, San Francisco.<br>Register now to secure your spot.</p>
+
+    <div class="card">
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <form id="regForm" novalidate>
+        <!-- Personal Info -->
+        <div class="form-section-title">Personal Information</div>
+
+        <div class="row">
+          <div class="field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" placeholder="Ada" />
+            <span class="error-msg" id="firstNameErr">First name is required</span>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" placeholder="Lovelace" />
+            <span class="error-msg" id="lastNameErr">Last name is required</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="ada@company.com" />
+          <span class="error-msg" id="emailErr">Please enter a valid email address</span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="+91 98765 43210" />
+          <span class="error-msg" id="phoneErr">Enter a valid phone number (min 10 digits)</span>
+        </div>
+
+        <!-- Professional Info -->
+        <div class="form-section-title">Professional Details</div>
+
+        <div class="field">
+          <label for="company">Company / Organization <span class="req">*</span></label>
+          <input type="text" id="company" placeholder="OpenAI, Google, etc." />
+          <span class="error-msg" id="companyErr">Company name is required</span>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="role">Job Role <span class="req">*</span></label>
+            <select id="role">
+              <option value="">Select role...</option>
+              <option>AI Researcher</option>
+              <option>ML Engineer</option>
+              <option>Data Scientist</option>
+              <option>Product Manager</option>
+              <option>Founder / CXO</option>
+              <option>Investor / VC</option>
+              <option>Student</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg" id="roleErr">Please select your role</span>
+          </div>
+          <div class="field">
+            <label for="experience">Years in AI/ML <span class="req">*</span></label>
+            <select id="experience">
+              <option value="">Select...</option>
+              <option>Less than 1 year</option>
+              <option>1–3 years</option>
+              <option>3–5 years</option>
+              <option>5–10 years</option>
+              <option>10+ years</option>
+            </select>
+            <span class="error-msg" id="experienceErr">Please select your experience</span>
+          </div>
+        </div>
+
+        <!-- Tracks -->
+        <div class="form-section-title">Choose Tracks (Select at least 1) <span class="req">*</span></div>
+        <div class="checkbox-group" id="tracksGroup">
+          <label class="check-item">
+            <input type="checkbox" name="track" value="llm" /> LLMs &amp; Foundation Models
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="track" value="robotics" /> Robotics &amp; Embodied AI
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="track" value="ethics" /> AI Ethics &amp; Safety
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="track" value="vision" /> Computer Vision
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="track" value="agents" /> Autonomous Agents
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="track" value="enterprise" /> AI in Enterprise
+          </label>
+        </div>
+        <span class="error-msg" id="tracksErr" style="margin-top: 8px">Please select at least one track</span>
+
+        <!-- Bio -->
+        <div class="form-section-title">About You</div>
+        <div class="field">
+          <label for="bio">Brief Bio / Why attending? <span class="req">*</span></label>
+          <textarea id="bio" placeholder="Tell us a bit about yourself and what you hope to gain from NeuralNexus 2026..."></textarea>
+          <span class="error-msg" id="bioErr">Bio must be at least 20 characters</span>
+        </div>
+
+        <button type="submit" class="btn-submit">SECURE MY SPOT →</button>
+      </form>
+
+      <div class="success-panel" id="successPanel">
+        <div class="success-icon">✓</div>
+        <h2>You're <span style="color: var(--accent)">Registered!</span></h2>
+        <p>Welcome to NeuralNexus 2026. Check your inbox for confirmation details and schedule access.</p>
+        <div class="ticket-id" id="ticketId"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
